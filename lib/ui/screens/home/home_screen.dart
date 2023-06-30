@@ -62,8 +62,8 @@ class HomeScreen extends StatelessWidget {
               decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.search,
-                    size: 24,
-                    color: Colors.grey.shade600,
+                    size: 30,
+                    color: Colors.grey.shade400,
                   ),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
