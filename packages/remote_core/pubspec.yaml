@@ -1,0 +1,12 @@
+name: remote_core
+description: This package provide data from server
+version: 0.0.1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  dio: ^5.2.1+1
+
+dev_dependencies:
+  test: ^1.22.1
