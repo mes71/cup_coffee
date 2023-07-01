@@ -6,6 +6,6 @@ extension AppWidget on num {
       );
 
   get toWidth => SizedBox(
-        height: toDouble(),
+        width: toDouble(),
       );
 }

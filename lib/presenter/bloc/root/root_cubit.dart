@@ -4,7 +4,7 @@ import 'package:equatable/equatable.dart';
 part 'root_state.dart';
 
 class RootCubit extends Cubit<RootState> {
-  RootCubit() : super(RootInitial(0));
+  RootCubit() : super(const RootState(0));
 
-  void selectPage(int index) => emit(RootInitial(index));
+  void selectPage(int index) => emit(RootState(index));
 }

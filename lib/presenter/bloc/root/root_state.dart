@@ -1,15 +1,10 @@
 part of 'root_cubit.dart';
 
-abstract class RootState extends Equatable {
-  int currentPage;
+class RootState extends Equatable {
+  final int currentPage;
 
-  RootState(this.currentPage);
-}
-
-class RootInitial extends RootState {
-  RootInitial(this.index) : super(index);
-  final int index;
+  const RootState(this.currentPage);
 
   @override
-  List<Object> get props => [index];
+  List<Object> get props => [currentPage];
 }
