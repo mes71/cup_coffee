@@ -13,6 +13,7 @@ class RootScreen extends StatelessWidget {
     return BlocBuilder<RootCubit, RootState>(
       builder: (context, state) {
         return Scaffold(
+          resizeToAvoidBottomInset: false,
           body: myPages[state.currentPage],
           bottomNavigationBar: BottomNavigationBar(
             enableFeedback: true,

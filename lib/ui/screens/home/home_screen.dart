@@ -11,10 +11,11 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       maintainBottomViewPadding: true,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           //region AppBar Home Page
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -59,7 +60,7 @@ class HomeScreen extends StatelessWidget {
 
           //region Search TextField
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: TextField(
               enabled: true,
               decoration: InputDecoration(
@@ -99,75 +100,78 @@ class HomeScreen extends StatelessWidget {
           ),
           //endregion
 
-          Container(
-            height: 350,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                  child: Text(
-                    "Popular Coffee",
-                    style: Theme.of(context).textTheme.headlineSmall,
-                  ),
-                ),
-                20.toHeight,
-                Expanded(
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) => Container(
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    width: 261,
-                                    height: 180,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(35),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color: Colors.grey.shade200,
-                                              offset: Offset(0, 2),
-                                              blurRadius: 2,
-                                              spreadRadius: 2)
-                                        ],
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                Assets.imagesCappochino),
-                                            fit: BoxFit.cover)),
-                                  ),
-                                  Container(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 5),
-                                    width: 255,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text("Cappuccino"),
-                                        Text("\$550")
-                                      ],
-                                    ),
-                                  ),
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        Icons.location_on_outlined,
-                                      ),
-                                      Text("Coffee cafe")
-                                    ],
-                                  )
-                                ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            child: Text(
+              "Popular Coffee",
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+          ),
+          14.toHeight,
+          SizedBox(
+              height: 245,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => Container(
+                        padding: EdgeInsets.only(left: 20 , right: index==9 ? 20:0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 261,
+                              height: 180,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(35),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.grey.shade200,
+                                        offset: Offset(0, 2),
+                                        blurRadius: 2,
+                                        spreadRadius: 2)
+                                  ],
+                                  image: const DecorationImage(
+                                      image:
+                                          AssetImage(Assets.imagesCappochino),
+                                      fit: BoxFit.cover)),
+                            ),
+                            14.toHeight,
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 5),
+                              width: 255,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [Text("Cappuccino"), Text("\$550")],
                               ),
                             ),
-                        itemCount: 10))
-              ],
+                            4.toHeight,
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.location_on_outlined,
+                                ),
+                                Text("Coffee cafe")
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                  itemCount: 10)),
+
+
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            child: Text(
+              "Nearest coffee shops",
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
-          )
+          ),
+
+          Container(
+            width: 125,
+
+height: 250,          )
         ],
       ),
     );
