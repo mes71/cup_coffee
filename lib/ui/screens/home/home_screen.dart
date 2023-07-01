@@ -101,50 +101,69 @@ class HomeScreen extends StatelessWidget {
 
           Container(
             height: 350,
-            padding: const EdgeInsets.fromLTRB(20, 30, 0, 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
-                  "Popular Coffee",
-                  style: Theme.of(context).textTheme.headlineSmall,
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  child: Text(
+                    "Popular Coffee",
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
                 ),
                 20.toHeight,
                 Expanded(
-                    child: ListView.separated(
+                    child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) => Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 261,
-                                  height: 180,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(35),
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              Assets.imagesCappochino),
-                                          fit: BoxFit.cover)),
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  mainAxisSize: MainAxisSize.max,
-
-                                  
-                                  children: [Text("Cappuccino"),Text("\$550")],
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(Icons.location_on_outlined),
-                                    Text("Coffee cafe")
-                                  ],
-                                )
-                              ],
+                        itemBuilder: (context, index) => Container(
+                              padding: EdgeInsets.symmetric(horizontal: 10),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    width: 261,
+                                    height: 180,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(35),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: Colors.grey.shade200,
+                                              offset: Offset(0, 2),
+                                              blurRadius: 2,
+                                              spreadRadius: 2)
+                                        ],
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                Assets.imagesCappochino),
+                                            fit: BoxFit.cover)),
+                                  ),
+                                  Container(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 5),
+                                    width: 255,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text("Cappuccino"),
+                                        Text("\$550")
+                                      ],
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Icons.location_on_outlined,
+                                      ),
+                                      Text("Coffee cafe")
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
-                        separatorBuilder: (context, index) => 20.toWidth,
                         itemCount: 10))
               ],
             ),
