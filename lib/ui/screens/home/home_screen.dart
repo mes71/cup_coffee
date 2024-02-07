@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           //region AppBar Home Page
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            padding: const EdgeInsets.fromLTRB(20, 11, 20, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
 
           //region Search TextField
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             child: TextField(
               enabled: true,
               decoration: InputDecoration(
@@ -100,7 +100,7 @@ class HomeScreen extends StatelessWidget {
           //endregion
 
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
             child: Text(
               "Popular Coffee",
               style: TextStyle(
@@ -112,19 +112,19 @@ class HomeScreen extends StatelessWidget {
           ),
 
           SizedBox(
-              height: 245,
+              height: 265,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => Container(
                         padding: EdgeInsets.only(
-                            left: 20, right: index == 9 ? 20 : 0),
+                            left: 10, right: index == 9 ? 20 : 0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Container(
                               width: 261,
-                              height: 180,
+                              height: 200,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(35),
                                   boxShadow: [
@@ -155,6 +155,7 @@ class HomeScreen extends StatelessWidget {
                               children: [
                                 Icon(
                                   Icons.location_on_outlined,
+                                  size: 16,
                                 ),
                                 Text("Coffee cafe")
                               ],
@@ -165,7 +166,7 @@ class HomeScreen extends StatelessWidget {
                   itemCount: 10)),
 
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Text(
               "Nearest coffee shops",
               style: TextStyle(
@@ -177,25 +178,24 @@ class HomeScreen extends StatelessWidget {
           ),
 
           Container(
-            height: 200,
+            height: 238,
             child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => Container(
                       margin: EdgeInsets.only(left: index == 0 ? 10 : 0),
                       width: 177,
-                      height: 200,
+                      height: 230,
                       child: Stack(
                         children: [
                           Positioned(
                             left: 0,
                             top: 0,
                             child: Container(
-                              width: 177,
-                              height: 154,
+                              width: 180,
+                              height: 180,
                               decoration: ShapeDecoration(
                                 image: DecorationImage(
-                                    image:
-                                        AssetImage(Assets.imagesCoffeeShop),
+                                    image: AssetImage(Assets.imagesCoffeeShop),
                                     fit: BoxFit.cover),
                                 gradient: LinearGradient(
                                   begin: Alignment(-0.00, -1.00),
@@ -312,10 +312,9 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                 itemCount: 4,
-                separatorBuilder: (BuildContext context, int index) =>
-                    Padding(
-                        padding: EdgeInsets.only(
-                            left: 10, right: index == 3 ? 10 : 0))),
+                separatorBuilder: (BuildContext context, int index) => Padding(
+                    padding:
+                        EdgeInsets.only(left: 10, right: index == 3 ? 10 : 0))),
           )
         ],
       ),

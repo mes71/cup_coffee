@@ -10,7 +10,7 @@ class Repository extends IRepository {
   late IDataSource _dataSource;
 
   Repository._() {
-    this._dataSource = DataSource();
+    this._dataSource = DataSourceImp();
   }
 
   @override

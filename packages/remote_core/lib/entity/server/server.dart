@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 
 //this is base Dio
-
 final Dio dio = Dio(BaseOptions(
     baseUrl:
         "https://raw.githubusercontent.com/mes71/fakeApi/master/Cup_Coffee/"));

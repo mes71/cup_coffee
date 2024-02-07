@@ -10,6 +10,8 @@ class RootScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    print(size.toString());
     return BlocBuilder<RootCubit, RootState>(
       builder: (context, state) {
         return Scaffold(

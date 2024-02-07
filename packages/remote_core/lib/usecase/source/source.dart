@@ -7,7 +7,7 @@ abstract class IDataSource {
   Future<List> getNearestCoffeeShopDataSource();
 }
 
-class DataSource extends IDataSource {
+class DataSourceImp extends IDataSource {
   @override
   Future<List> getNearestCoffeeShopDataSource() async {
     List res = List.empty();
